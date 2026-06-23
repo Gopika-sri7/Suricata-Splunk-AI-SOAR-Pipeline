@@ -115,7 +115,6 @@ Before running this project, ensure you have the following installed and configu
 
 
 
-
 🚀 Quick Start
 1. Clone the repository
 git clone https://github.com/your-username/soc-alert-dashboard.git
@@ -123,13 +122,17 @@ cd soc-alert-dashboard
 2. Install dependencies
 pip install streamlit splunk-sdk google-genai
 3. Set environment variables
-Windows (Command Prompt)
+
+Windows (Command Prompt):
+
 set SPLUNK_HOST=localhost
 set SPLUNK_PORT=8089
 set SPLUNK_USERNAME=admin
 set SPLUNK_PASSWORD=your_password
 set GEMINI_API_KEY=your_api_key
-Windows (PowerShell)
+
+Windows (PowerShell):
+
 $env:SPLUNK_HOST = "localhost"
 $env:SPLUNK_PORT = "8089"
 $env:SPLUNK_USERNAME = "admin"
