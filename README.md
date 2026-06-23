@@ -115,65 +115,96 @@ Before running this project, ensure you have the following installed and configu
 
 
 
-🚀 Quick Start
-1. Clone the repository
+## 🚀 Quick Start
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/your-username/soc-alert-dashboard.git
 cd soc-alert-dashboard
-2. Install dependencies
+```
+
+### 2. Install dependencies
+
+```bash
 pip install streamlit splunk-sdk google-genai
-3. Set environment variables
+```
 
-Windows (Command Prompt):
+### 3. Set environment variables
 
+#### Windows (Command Prompt)
+
+```cmd
 set SPLUNK_HOST=localhost
 set SPLUNK_PORT=8089
 set SPLUNK_USERNAME=admin
 set SPLUNK_PASSWORD=your_password
 set GEMINI_API_KEY=your_api_key
+```
 
-Windows (PowerShell):
+#### Windows (PowerShell)
 
+```powershell
 $env:SPLUNK_HOST = "localhost"
 $env:SPLUNK_PORT = "8089"
 $env:SPLUNK_USERNAME = "admin"
 $env:SPLUNK_PASSWORD = "your_password"
 $env:GEMINI_API_KEY = "your_api_key"
-4. Run the dashboard
+```
+
+### 4. Run the dashboard
+
+```bash
 streamlit run app.py
-5. Open in browser
+```
+
+### 5. Open in your browser
+
+```text
 http://localhost:8501
+```
 
+---
 
+## 🔄 Pipeline Walkthrough
 
-🔄 Pipeline Walkthrough
+### Step 1 — Detection
 
+Suricata monitors network traffic and writes alerts (e.g., SSH brute force, port scans) to `eve.json`.
 
+### Step 2 — Ingestion
 
-Step 1 — Detection: Suricata monitors network traffic and writes alerts (e.g., SSH brute force, port scans) to eve.json.
+Splunk indexes the Suricata logs and makes them queryable.
 
+### Step 3 — Fetching
 
+The Python application queries Splunk for the latest alert and extracts:
 
-Step 2 — Ingestion: Splunk indexes the Suricata logs and makes them queryable.
+* Source IP
+* Target IP
+* Attack signature
 
+### Step 4 — Enrichment
 
+The AI model analyzes the alert and returns:
 
-Step 3 — Fetching: The Python app queries Splunk for the latest alert and extracts source IP, target IP, and attack signature.
+* MITRE ATT&CK mapping
+* Severity score
+* Recommended response actions
 
+If the AI service is unavailable, the local fallback engine classifies the threat using predefined signature rules.
 
+### Step 5 — Review
 
-Step 4 — Enrichment: The AI model analyzes the alert and returns a MITRE ATT\&CK mapping, severity score, and recommended actions. If the AI service is unavailable, the local fallback engine classifies the threat using predefined signature rules.
+The analyst reviews the enriched alert in the Streamlit dashboard and decides whether to:
 
+* Block
+* Monitor
+* Dismiss
 
+### Step 6 — Response
 
-Step 5 — Review: The analyst sees the enriched alert on the Streamlit dashboard and decides whether to block, monitor, or dismiss.
-
-
-
-Step 6 — Response: If approved, the system runs a netsh command to block the attacker IP and records the action in the audit log.
-
-
-
-
+If approved, the system executes a `netsh` command to block the attacker IP and records the action in the audit log.
 
 🧠 What This Project Demonstrates
 
