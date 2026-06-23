@@ -206,57 +206,38 @@ The analyst reviews the enriched alert in the Streamlit dashboard and decides wh
 
 If approved, the system executes a `netsh` command to block the attacker IP and records the action in the audit log.
 
-🧠 What This Project Demonstrates
+## 🧠 What This Project Demonstrates
 
+### Security Concepts
 
+* SOC workflow understanding and alert triage
+* SIEM + IDS integration (Splunk + Suricata)
+* AI-based security alert enrichment and analysis
+* Incident response automation with human oversight
 
+### Engineering Concepts
 
+* Fault-tolerant design using a rule-based fallback engine
+* Secure command execution
+* Audit logging and tracking
+* End-to-end security pipeline design
 
-SOC workflow understanding and alert triage process
+---
 
-SIEM + IDS integration (Splunk + Suricata)
+## ⚠️ Disclaimer
 
-AI-based security alert enrichment and analysis
+This project is built for educational and portfolio purposes to simulate a SOC environment. It is not intended for production use.
 
-Fault-tolerant design with a rule-based fallback engine
+### Important Notes
 
-Incident response automation with human oversight
+* Always review AI-generated analysis before taking action.
+* Never block an IP address without verifying the alert.
+* Firewall commands require administrative privileges.
+* Tested on Windows environments.
+* Linux firewall integration (`iptables` / `ufw`) is not currently implemented.
 
-Secure command execution and audit logging
+---
 
+## 📄 License
 
-
-
-
-
-
-⚠️ Disclaimer
-
-
-
-This is a learning project built to simulate a SOC environment. It is not intended for production use.
-
-
-
-
-
-Always review AI-generated analysis before taking any action
-
-Never block an IP address without verifying the alert
-
-Firewall commands require administrative privileges — use responsibly
-
-Tested on Windows; Linux firewall integration (iptables/ufw) is not yet implemented
-
-
-
-
-
-
-
-📄 License
-
-
-
-This project is licensed under the MIT License. See LICENSE for details.
-
+This project is licensed under the MIT License. See the `LICENSE` file for details.
