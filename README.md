@@ -101,28 +101,15 @@ The system ingests alerts from a Suricata IDS, enriches them using an AI model (
 
 
 
-
-
-⚙️ Prerequisites
-
-
+## ⚙️ Prerequisites
 
 Before running this project, ensure you have the following installed and configured:
 
-
-
-
-
-Python 3.8 or higher
-
-Suricata IDS (generating eve.json or fast.log)
-
-Splunk (with a Suricata log source configured)
-
-A valid Google Gemini or Anthropic Claude API key
-
-Windows OS (for firewall response feature)
-
+- Python 3.8 or higher  
+- Suricata IDS (generating `eve.json` or `fast.log`)  
+- Splunk (with a Suricata log source configured)  
+- A valid Google Gemini or Anthropic Claude API key  
+- Windows OS (for firewall response feature)
 
 
 
