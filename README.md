@@ -74,12 +74,17 @@ The system ingests alerts from a Suricata IDS, enriches them using an AI model (
 
 
 
-✨ Features
+## ✨ Features
 
-
-
-FeatureDescription🔍 Alert EnrichmentExtracts source/target IPs and attack signatures from Suricata logs🗺️ MITRE ATT\&CK MappingMaps each alert to the relevant ATT\&CK tactic and technique📊 Severity ScoringGenerates a 1–10 severity score to prioritize analyst attention🔁 Fallback EngineRule-based classifier activates automatically if the AI service fails👨‍💻 Human-in-the-LoopNo automatic blocking — analyst must approve every response action🔥 Firewall IntegrationBlocks attacker IPs via Windows Firewall (netsh) on approval📋 Audit TrailEvery action is logged with timestamp, IP, and analyst decision
-
+| Feature | Description |
+|--------|-------------|
+| 🔍 Alert Enrichment | Extracts IPs and attack signatures from Suricata logs |
+| 🗺️ MITRE Mapping | Maps alerts to ATT&CK tactics and techniques |
+| 📊 Severity Scoring | Generates severity score (1–10) |
+| 🔁 Fallback Engine | Rule-based system when AI fails |
+| 👨‍💻 Human Control | Analyst approves all actions |
+| 🔥 Firewall Integration | Blocks IP using Windows Firewall (netsh) |
+| 📋 Audit Trail | Logs all actions with timestamp |
 
 
 
