@@ -88,12 +88,16 @@ The system ingests alerts from a Suricata IDS, enriches them using an AI model (
 
 
 
+## 🧱 Tech Stack
 
-🧱 Tech Stack
-
-
-
-LayerTechnologyNetwork DetectionSuricata IDSLog ManagementSplunkBackendPython 3.8+Dashboard UIStreamlitAI EnrichmentGoogle Gemini / Claude APIFirewall ControlWindows Firewall (netsh)
+| Layer | Technology |
+|------|------------|
+| Network Detection | Suricata IDS |
+| SIEM | Splunk |
+| Backend | Python 3.8+ |
+| Dashboard | Streamlit |
+| AI Enrichment | Gemini / Claude API |
+| Firewall Control | Windows Firewall (netsh) |
 
 
 
